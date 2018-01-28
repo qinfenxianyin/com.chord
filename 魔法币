@@ -1,0 +1,33 @@
+package 魔法币;
+
+import java.util.Scanner;
+
+public class 魔法币 {
+	static String gg="";
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		System.out.println(set(n));
+	}
+	public static String set(int n){		
+		
+		if(n%2==0 && n!=0){
+			n=(n-2)/2;
+			gg+=2;
+			set(n);
+		}else{
+			if(n==0 || n==2){
+				return "1";
+			}
+			n=(n-1)/2;
+			gg+=1;
+			set(n);
+		}
+		char[] str=gg.toCharArray();
+		String aa="";
+		for(int i=str.length-1;i>-1;i--){
+			aa+=str[i];
+		}		
+        return aa;
+    }
+}
